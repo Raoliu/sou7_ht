@@ -1,0 +1,65 @@
+user
+	id
+	realName 姓名
+	age 年龄
+	sex 性别
+	nickName 微信名
+	acavater 微信头像
+	area 地址
+	address 详细地址
+	cardType 证件类型 1：身份证 2：护照 
+	cardCode 证件号
+	isIdention 是否认证 0：false 1：true
+	identityImgs 身份证照片 []
+	mobile 手机号
+	openId 用户Id
+	userCode 用户code
+	favorite 收藏宠物列表 []
+	myApplyIds 我申请的领养列表
+	myHelpIds 我申请的求助列表
+	myGetApplyIds  我收到的领养申请列表
+	myGetHelpIds   我收到的申请求助列表
+
+shop
+	shopName 店名
+	address 详细地址
+	openTime 营业时间
+	longitude 经度
+	latitude 纬度
+	distance 距离
+	description 描述
+petsList
+	id
+	name 宠物名称
+	age 宠物年龄
+	sex 性别
+	image [] 宠物图片
+	adoptionRequirements [] 领养要求
+	breed 种类
+	hairColor 毛色
+	description 简介
+	longitude 经度
+	latitude 纬度
+	type 种类 0：猫 1：狗
+	repellent 驱虫
+	vaccine 疫苗
+	sterilize 绝育
+	size 体型
+	hairType 毛发
+	source 救助来源
+	openId 发布者id
+helpList
+	id
+	images 图片列表
+	title 标题
+	descrition 描述
+	area 区域
+	address 详细地址
+	longitude 经度
+	latitude 纬度
+natification
+	id
+	sendUserId 发送者信息
+	acceptUserId 接受者信息
+	message 信息
+	helpId 求助id
