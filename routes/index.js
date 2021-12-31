@@ -13,5 +13,6 @@ router.get('/', function (req, res, next) {
 });
 
 router.post("/uploadImage", upload.single('file'), getStaff.uploadsImage)
+router.post("/addPets", getStaff.addPets)
 
 module.exports = router;
