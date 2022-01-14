@@ -73,12 +73,10 @@ uploadsImage = function(req,res){
 
 addPets = function(req,res){
     let {openId,name,age,sex,image,adoptionRequirements,breed,hairColor,description,longitude,latitude,type,repellent,vaccine,sterilize,size,hairType,source} = req.body;
-
     if(type!=0&&type!=1){
         res.send(JSON.stringify({message:"宠物类型有误!",code:400}))
         return
     }
-
     let sql  = `insert into petslist(openId,name,age,sex,image,adoptionRequirements,breed,hairColor,description,longitude,latitude,type,repellent,vaccine,sterilize,size,hairType,source) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
     let sqlArr = [openId,name,age,sex,image,adoptionRequirements,breed,hairColor,description,longitude,latitude,type,repellent,vaccine,sterilize,size,hairType,source]
     let callBack = function (err,data) {
@@ -96,7 +94,6 @@ addPets = function(req,res){
 
 updatePets = function(req,res){
     let {id,openId,name,age,sex,image,adoptionRequirements,breed,hairColor,description,longitude,latitude,type,repellent,vaccine,sterilize,size,hairType,source} = req.body;
-
     let sql = `update petslist set openId = ${openId},name = ${name},age = ${age},sex = ${sex},image = ${image},adoptionRequirements = ${adoptionRequirements},breed = ${breed},hairColor = ${hairColor}  where id = ${id}`
     let sqlArr = [openId,name,age,sex,image,adoptionRequirements,breed,hairColor,description,longitude,latitude,type,repellent,vaccine,sterilize,size,hairType,source]
     let callBack = function (err,data) {
