@@ -11,11 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.PetsList.hasOne(models.User,{foreignKey: 'openId'})
     }
   };
-  PetsList.associate = function(models){
-    // models.Article.hasMany(models.Comments,{foreignKey:'ArticleId'})
-  };
+  // PetsList.associate = function(models){
+  //   // models.Article.hasMany(models.Comments,{foreignKey:'ArticleId'})
+  //   models.PetsList.hasOne(models.User,{foreignKey: 'openId'})
+  // };
   PetsList.init({
     openId: DataTypes.STRING,
     name: DataTypes.STRING,

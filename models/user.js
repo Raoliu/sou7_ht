@@ -11,10 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.User.hasMany(models.PetsList,{foreignKey:"openId"})
     }
   };
   // User.associate = function(models){
-    // models.Article.hasMany(models.Comments,{foreignKey:'ArticleId'})
+  //   // models.Article.hasMany(models.Comments,{foreignKey:'ArticleId'})
+  //   models.User.hasMany(models.PetsList,{foreignKey:"openId"})
   // };
   User.init({
     realName: DataTypes.STRING,
@@ -30,12 +32,16 @@ module.exports = (sequelize, DataTypes) => {
     identityImgs: DataTypes.STRING,
     mobile: DataTypes.INTEGER,
     openId: DataTypes.STRING,
+    sessionKey: DataTypes.STRING,
     userCode: DataTypes.STRING,
     favorite: DataTypes.STRING,
     myApplyIds: DataTypes.STRING,
     myHelpIds: DataTypes.STRING,
     myGetApplyIds: DataTypes.STRING,
     myGetHelpIds: DataTypes.STRING,
+    souqiId: DataTypes.STRING,
+    job: DataTypes.STRING,
+    company: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'User',

@@ -7,6 +7,8 @@ var bodyParser = require("body-parser");
 let http = require("http");
 
 var indexRouter = require('./routes/index');
+var petslistRouter = require('./routes/petslist');
+var uploadRouter = require('./routes/uploadFile');
 var usersRouter = require('./routes/users');
 var articlesRouter = require('./routes/articles');
 
@@ -23,9 +25,12 @@ app.use(express.urlencoded({ extended: false }));
 // app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static('./public/uploads/'))
 
 app.use('/', indexRouter);
+app.use('/uploadFile', uploadRouter);
 app.use('/users', usersRouter);
+app.use('/petsList', petslistRouter);
 app.use('/articles', articlesRouter);
 
 // catch 404 and forward to error handler
